@@ -1,0 +1,56 @@
+pipeline {
+   agent any
+stages {
+      stage('code checkout') {
+         steps {
+            git 'https://github.com/vigneshvp8910/helloworld.git'
+         }
+         }
+         stage('Sonarqube - code quality') {
+         steps {
+            echo 'Sonarqube has been performed successfully '
+         }
+         }
+         
+ 
+         
+        
+         stage('dev deploy') {
+         steps {
+            echo 'success'
+         }
+         }
+         stage('Smoke testing') {
+         steps {
+            echo 'ready to be moved to production'
+        
+            
+         }
+         }
+
+ 
+
+         stage('Checkpoint') {
+        
+         steps {
+            input('do you want to proceed?')
+         }
+      }
+         stage('prod deploy') {
+         steps {
+            echo 'success, deployed to PROD'
+         }
+      }
+   }
+}
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ 
